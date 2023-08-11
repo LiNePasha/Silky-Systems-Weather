@@ -33,6 +33,21 @@
           )
         }}
       </p>
+
+      <!-- Bonus: Toggle Between Celsius & Fahrenheit temperature units -->
+        <div class="flex mb-3">
+          <div class="mr-5">
+              <input type="radio" id="c" name="yes" :value=Math.round(weatherData.current.temp) v-model="radioCheck" />
+              <label class="border px-3 py-1 transition duration-500 ease-in-out" for="c">Celsius</label><br />
+          </div>
+          <div>
+              <input type="radio" id="f" name="no" :value=Math.round(weatherData.current.temp*1.8)+32 v-model="radioCheck" />
+          <label class="border px-3 py-1 transition duration-500 ease-in-out" for="f">Fahrenheit</label><br />
+          </div>
+        </div>
+        <p class="mb-3">temperature units: <span class="text-4xl">{{ radioCheck }}</span></p>
+      <!-- End Bonus-->
+
       <div class="flex">
         <div class="mr-2 text-center">
           <button id="to_c" class="border px-3 py-1 transition duration-500 ease-in-out">Celsius temperature units</button>
@@ -48,7 +63,7 @@
         </div>
       </div>
       <p>
-        Feels likessss
+        Feels likes
         {{ Math.round(weatherData.current.feels_like) }} &deg;
       </p>
       <p class="capitalize">
@@ -145,13 +160,24 @@
   </div>
 </template>
 
+<style>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
+
 <script setup>
-
-
-const showText = true
-
+import { ref, onMounted } from 'vue'
 import axios from "axios";
 import { useRoute, useRouter } from "vue-router";
+
+
 
 const route = useRoute();
 const getWeatherData = async () => {
@@ -194,4 +220,11 @@ const removeCity = () => {
     name: "home",
   });
 };
+
+// here we watch and update ref value - Bonus
+const radioCheck = ref(Math.round(weatherData.current.temp))
+onMounted(() => {
+  radioCheck.value
+})
+
 </script>
