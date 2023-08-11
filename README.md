@@ -17,8 +17,7 @@ given location.
 
 - ## You Will See:
 
-- Bonus: Toggle Between Celsius & Fahrenheit temperature units
-- The App Display the current Celsius and Fahrenheit temperature units
+- Bonus: Toggle Between Celsius & Fahrenheit temperature units.
 - Weather description, and an icon representing the weather condition.
 - Hourly Weather, 7 Day Forecast.
 - Analysing all data from openweathermap.org API.
