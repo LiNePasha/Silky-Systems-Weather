@@ -5,6 +5,8 @@ given location.
 
 ![Silky Systems Wether App Preview](https://res.cloudinary.com/dzxbbqq4l/image/upload/v1691685336/Screenshot_87_ywexxa.png)
 
+![Toggle Between Units Preview](https://res.cloudinary.com/dzxbbqq4l/image/upload/v1691739142/Screenshot_88_gx9fkf.png)
+
 ## Technical:
 
 - Vue.js + vue-router + TailwindCss + axios + uid + ViteJS.
